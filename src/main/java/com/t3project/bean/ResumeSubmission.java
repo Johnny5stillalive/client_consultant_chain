@@ -14,7 +14,6 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.mysql.cj.xdevapi.Client;
 
 @Entity
 @Table(name="RESUME_SUBMISSION")
@@ -35,14 +34,12 @@ public class ResumeSubmission {
 	@JoinColumn(name="CLIENT_ID")
 	private Client client;
 	
-	@MapsId
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="VENDOR_ID")
-	private Vendor vendor;
-	
 	@Column(name="DATE")
 	private Date date;
 
-	
+	@MapsId
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name= "VENDOR_ID")
+	private Vendor vendor;
 	
 }	

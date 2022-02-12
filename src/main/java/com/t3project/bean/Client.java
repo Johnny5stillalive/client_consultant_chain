@@ -17,6 +17,8 @@ import org.hibernate.annotations.IndexColumn;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
+import com.t3project.bean.Vendor;
+
 @Entity
 @Table(name="Client")
 public class Client {
@@ -24,16 +26,7 @@ public class Client {
 	@Id
 	@GeneratedValue
 	@IndexColumn(name="CLIENT_ID")
-	private Integer id;
-	
-	
-	//This will depend on Jacob's provided class.
-	// This probably needs to be a list?
-	// I provided an attempt at a list below.	
-	@MapsId
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="CONSULTANT_ID")
-	private Consultant consultant;
+	private int id;
 	
 
 	//Should we include an Address class? We can keep this as a string for now.
@@ -43,62 +36,14 @@ public class Client {
 	@Column(name = "NAME")
 	private String name;
 	
-	//We need to resolve a many to many relationship here. 
-	// Do we keep track of which vendors reached out to which clients?
-	// Does this matter?
-	//Do I do a @JoinByColumn?
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
-	private List<Vendor> vendor;
+//	//We need to resolve a many to many relationship here. 
+//	// Do we keep track of which vendors reached out to which clients?
+//	// Does this matter?
+//	//Do I do a @JoinByColumn?
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	@OneToMany(mappedBy="client", cascade=CascadeType.ALL)
+//	private List<Vendor> vendor;
 
-	
-	// Getters and Setters:
-	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-
-	public void setEmployee(Employee employee) {
-		this.consultant = consultant;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String company) {
-		this.name = company;
-	}
-
-	public Consultant getConsultant() {
-		return consultant;
-	}
-
-	public void setConsultant(Consultant consultant) {
-		this.consultant = consultant;
-	}
-
-	public List<Vendor> getVendor() {
-		return vendor;
-	}
-
-	public void setVendor(List<Vendor> vendor) {
-		this.vendor = vendor;
-	}
 	
 	
 }

@@ -22,7 +22,7 @@ public class Consultant {
 	@Id
 	@GeneratedValue
 	@Column(name = "CONSULTANT_ID")
-	private int consultantId;
+	private int id;
 	
 	@Column(name = "NAME")
 	private String name;

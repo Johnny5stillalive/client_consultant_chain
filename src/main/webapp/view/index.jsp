@@ -29,7 +29,7 @@
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="https://website1405637.nicepage.io/Page-13.html?version=855e3770-73f1-425b-b84c-2fe0fbe878c8" data-home-page-title="Page 13" class="u-body u-xl-mode">
-    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="${pageContext.request.contextPath}/image/2236553_medium2000.jpg" data-image-width="1553" data-image-height="1000" id="sec-bc47">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1553" data-image-height="1000" id="sec-bc47">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-title u-text-1">Some Company Inc.</h1>
       </div>

@@ -1,6 +1,6 @@
 package com.t3project.bean;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,11 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 
 @Entity
@@ -36,27 +35,43 @@ public class Vendor
 
 	@Column(name = "SALARY")
 	private double salary;
+	
+	@ManyToMany(targetEntity= Client.class, cascade=CascadeType.ALL)
+	@JoinTable(name="vendor_client",
+	joinColumns=@JoinColumn(name="vendor_id"), 
+	inverseJoinColumns=@JoinColumn(name="client_id"))
+	private Set<Client> clients;
+	
+	@ManyToMany(targetEntity= Consultant.class, cascade=CascadeType.ALL)
+	@JoinTable(name="vendor_consultant",
+	joinColumns=@JoinColumn(name="vendor_id"), 
+	inverseJoinColumns=@JoinColumn(name="consultant_id"))
+	private Set<Consultant> consultants;
 
+	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
+	private Set<ResumeSubmission> resumeSubmissions;
+	
+	
 	//How should we set these up? Can I do two?
 	
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
-	@JoinColumn(name="CONSULTANT_ID")
-	private List<Consultant> consultant; // Our vendor receives many resumes from many consultants.
-										 // Will Jacob provide a Resume class? Should we just use an id?
-										 // Can I just store a list of Ids instead of consultant objects?
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
+//	@JoinColumn(name="CONSULTANT_ID")
+//	private List<Consultant> consultant; // Our vendor receives many resumes from many consultants.
+//										 // Will Jacob provide a Resume class? Should we just use an id?
+//										 // Can I just store a list of Ids instead of consultant objects?
 	
-	//I don't believe I need this relationship. What does matter is the client-consultant relationship, right?
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
-	@JoinColumn(name="CLIENT_ID")
-	private List<Client> client; // Our vendor(s) may send resumes to many clients We have a possible MtM
-								 // relationship here. How do we resolve it?
-								 // A vendor may send many different resumes to many different clients.
-								 // We should have to check the client's relationship to the consultant?
-								 // Would I do this statement in order to check the client's relationships?
-								 // This would simply check which clients our vendor has gotten involved with, if anything.
 	
-
+//	//I don't believe I need this relationship. What does matter is the client-consultant relationship, right?
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
+//	@JoinColumn(name="CLIENT_ID")
+//	private List<Client> client; // Our vendor(s) may send resumes to many clients We have a possible MtM
+//								 // relationship here. How do we resolve it?
+//								 // A vendor may send many different resumes to many different clients.
+//								 // We should have to check the client's relationship to the consultant?
+//								 // Would I do this statement in order to check the client's relationships?
+//								 // This would simply check which clients our vendor has gotten involved with, if anything.
+	
 
 }

@@ -1,5 +1,8 @@
 package com.t3project.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,21 +25,24 @@ import org.hibernate.annotations.LazyCollectionOption;
 public class Resume 
 {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO) // Do I do this?
+	@GeneratedValue(strategy=GenerationType.AUTO) 
 	@Column(name="RESUME_ID")
 	private int id;
+	
+	@Column(name="TYPE")
+	private String type;
+	
+	@Column(name="Content")
+	private String content;
 	
 	@MapsId
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="CONSULTANT_ID")
 	private Consultant consultant;
 	
-
-	@Column(name="TYPE")
-	private String type;
-	
-	@Column(name="Content")
-	private String content;
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(mappedBy="resume", cascade=CascadeType.ALL)
+	private List<ResumeSubmission> submissions;
 
 	/*
 	//First name, last name? Let's keep it simple for now as whatever they want..
