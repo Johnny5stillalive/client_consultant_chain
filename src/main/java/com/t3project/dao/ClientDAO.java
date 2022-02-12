@@ -8,7 +8,7 @@ public interface ClientDAO {
 
 	void saveOrUpdateClient(Client client);
 	List<Client> listAllClient();
-	void deleteEmployee(int id);
+	void deleteClient(int id);
 	Client editClient(int id);
 	
 }

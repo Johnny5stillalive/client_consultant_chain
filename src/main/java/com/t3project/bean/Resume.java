@@ -32,7 +32,7 @@ public class Resume
 	@Column(name="TYPE")
 	private String type;
 	
-	@Column(name="Content")
+	@Column(name="CONTENT")
 	private String content;
 	
 	@MapsId

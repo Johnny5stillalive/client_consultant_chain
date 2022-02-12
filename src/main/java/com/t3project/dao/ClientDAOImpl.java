@@ -35,7 +35,7 @@ public class ClientDAOImpl implements ClientDAO{
 
 
 	@Override
-	public void deleteEmployee(int id) {
+	public void deleteClient(int id) {
 		// TODO Auto-generated method stub
 		
 	}

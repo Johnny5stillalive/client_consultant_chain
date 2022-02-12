@@ -28,13 +28,16 @@ public class Client {
 	@IndexColumn(name="CLIENT_ID")
 	private int id;
 	
+	@Column(name = "NAME")
+	private String name;
+	
+	@Column(name = "CONTACT_INFO")
+	private String contactInfo;
 
 	//Should we include an Address class? We can keep this as a string for now.
 	@Column(name = "ADDRESS")
 	private String address;
 
-	@Column(name = "NAME")
-	private String name;
 	
 //	//We need to resolve a many to many relationship here. 
 //	// Do we keep track of which vendors reached out to which clients?

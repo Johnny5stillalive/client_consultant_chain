@@ -32,9 +32,6 @@ public class Vendor
 	//Should we include an Address class? We can keep this as a string for now.
 	@Column(name = "ADDRESS")
 	private String address;
-
-	@Column(name = "SALARY")
-	private double salary;
 	
 	@ManyToMany(targetEntity= Client.class, cascade=CascadeType.ALL)
 	@JoinTable(name="vendor_client",
