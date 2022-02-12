@@ -35,6 +35,6 @@ public class Consultant {
 	
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(mappedBy="consultant", cascade=CascadeType.ALL)
-	private List<Client> resumesToClients = new ArrayList<Client>();
+	private List<Resume> resumes = new ArrayList<Resume>();
 	
 }

@@ -76,6 +76,8 @@
 				<value>com.t3project.bean.Consultant</value>
 				<value>com.t3project.bean.Client</value>
 				<value>com.t3project.bean.Vendor</value>
+				<value>com.t3project.bean.Resume</value>
+				<value>com.t3project.bean.ResumeSubmission</value>
 			</list>
 		</property>
 
