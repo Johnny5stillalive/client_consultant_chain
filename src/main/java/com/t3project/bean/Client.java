@@ -19,7 +19,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="CLIENT_ID")
-	private int id;
+	private int clientId;
 	
 	@MapsId
 	@ManyToOne(fetch = FetchType.LAZY)
