@@ -99,6 +99,9 @@
 		class="com.t3project.dao.ConsultantDAOImpl">
 		<property name="sessionFactory" ref="mySessionFactory" />
 	</bean>
+	
+	<bean id="VendorService" class="com.t3project.serviceImpl.VendorServiceImpl">
+	</bean>
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />

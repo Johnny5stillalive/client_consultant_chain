@@ -29,8 +29,11 @@ private HibernateTemplate hibernateTemplate;
 
 	@Override
 	public List<Vendor> listAllVendor() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Vendor> listVendor = hibernateTemplate.find("from Vendor");
+		if(listVendor.size() > 0) {
+			return listVendor;
+		}else 
+			return null;	
 	}
 
 
@@ -42,7 +45,7 @@ private HibernateTemplate hibernateTemplate;
 
 
 	@Override
-	public Client editVendor(int id) {
+	public Vendor editVendor(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

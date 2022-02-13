@@ -9,15 +9,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.t3project.bean.Vendor;
+import com.t3project.service.VendorService;
 
 import java.util.List;
 
 @Controller
 public class SiteController {
 	
-		//@Autowired
-		//EmployeeDAO empDAO;
+		@Autowired
+		VendorService vendorService;
 		
 		
 		@RequestMapping("/index")
@@ -40,8 +41,11 @@ public class SiteController {
 		
 		@RequestMapping("/vendorList")
 		public ModelAndView vendors(HttpServletRequest req, HttpServletResponse res) {
-			
-			return new ModelAndView("vendorList");
+			List<Vendor> listVendor = vendorService.listAllVendor();
+			ModelMap map = new ModelMap();
+			map.addAttribute("vendorList", listVendor);
+			map.addAttribute("message", "yeap");
+			return new ModelAndView("vendorList", map);
 		}
 		
 		@RequestMapping("/manageResumes")

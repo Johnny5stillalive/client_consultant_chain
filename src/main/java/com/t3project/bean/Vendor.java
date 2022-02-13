@@ -33,6 +33,9 @@ public class Vendor
 	@Column(name = "ADDRESS")
 	private String address;
 	
+	@Column(name = "CCONTACT_INFO")
+	private String contactInfo;
+	
 	@ManyToMany(targetEntity= Client.class, cascade=CascadeType.ALL)
 	@JoinTable(name="vendor_client",
 	joinColumns=@JoinColumn(name="vendor_id"), 
@@ -47,6 +50,64 @@ public class Vendor
 
 	@OneToMany(mappedBy="vendor", cascade=CascadeType.ALL)
 	private Set<ResumeSubmission> resumeSubmissions;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}
+
+	public Set<Consultant> getConsultants() {
+		return consultants;
+	}
+
+	public void setConsultants(Set<Consultant> consultants) {
+		this.consultants = consultants;
+	}
+
+	public Set<ResumeSubmission> getResumeSubmissions() {
+		return resumeSubmissions;
+	}
+
+	public void setResumeSubmissions(Set<ResumeSubmission> resumeSubmissions) {
+		this.resumeSubmissions = resumeSubmissions;
+	}
+
+	public String getContactInfo() {
+		return contactInfo;
+	}
+
+	public void setContactInfo(String contactInfo) {
+		this.contactInfo = contactInfo;
+	}
+	
+	
 	
 	
 	//How should we set these up? Can I do two?

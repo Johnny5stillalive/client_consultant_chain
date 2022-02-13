@@ -10,5 +10,5 @@ public interface VendorDAO {
 	void saveorUpdateVendor(Vendor vendor);
 	List<Vendor> listAllVendor();
 	void deleteVendor(int id);
-	Client editVendor(int id);
+	Vendor editVendor(int id);
 }

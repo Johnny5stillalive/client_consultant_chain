@@ -38,15 +38,39 @@ public class Client {
 	@Column(name = "ADDRESS")
 	private String address;
 
-	
-//	//We need to resolve a many to many relationship here. 
-//	// Do we keep track of which vendors reached out to which clients?
-//	// Does this matter?
-//	//Do I do a @JoinByColumn?
-//	@LazyCollection(LazyCollectionOption.FALSE)
-//	@OneToMany(mappedBy="client", cascade=CascadeType.ALL)
-//	private List<Vendor> vendor;
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getContactInfo() {
+		return contactInfo;
+	}
+
+	public void setContactInfo(String contactInfo) {
+		this.contactInfo = contactInfo;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	
 	
 	
 }
