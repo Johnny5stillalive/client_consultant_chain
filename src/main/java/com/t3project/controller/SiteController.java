@@ -32,16 +32,16 @@ public class SiteController {
 			return new ModelAndView("clientList");
 		}
 		
-		@RequestMapping("/consultants")
+		@RequestMapping("/consultantList")
 		public ModelAndView consultants(HttpServletRequest req, HttpServletResponse res) {
 			
-			return new ModelAndView("consultants");
+			return new ModelAndView("consultantList");
 		}
 		
-		@RequestMapping("/vendors")
+		@RequestMapping("/vendorList")
 		public ModelAndView vendors(HttpServletRequest req, HttpServletResponse res) {
 			
-			return new ModelAndView("vendors");
+			return new ModelAndView("vendorList");
 		}
 		
 		@RequestMapping("/manageResumes")
