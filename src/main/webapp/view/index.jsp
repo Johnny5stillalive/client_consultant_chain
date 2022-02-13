@@ -10,12 +10,12 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>index</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css" media="screen">
-<link rel="stylesheet" href="${pageContext.request.contextPath}css/main.css" media="screen">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/index.css" media="screen">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/view/css/main.css" media="screen">
 
-    <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/js/nicepage.js" defer=""></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/view/js/jquery-1.9.1.min.js" ></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/view/js/nicepage.js" ></script>
     <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="https://website1405637.nicepage.io/index.html?version=aaae3342-f879-48b0-9921-d8c57139f4db" data-home-page-title="index" class="u-body u-xl-mode">
-    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1553" data-image-height="1000" id="sec-bc47">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="/css/images/2236553_medium2000.jpg" data-image-width="1553" data-image-height="1000" id="sec-bc47">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-title u-text-1">Some Company Inc.</h1>
       </div>
